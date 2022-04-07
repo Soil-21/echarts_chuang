@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var fd = new FormData()
+        fd.append('uname', 'uubb')
+        fd.append('psw', '123')
+        var xml = new XMLHttpRequest
+        xml.open('POST', 'http://www.liulongbin.top:3006/api/formdata')
+        xml.send(fd)
+        xml.onreadystatechange = function() {
+            if (xml.readyState === 4 && xml.status === 200) {
+                console.log(JSON.parse(xml.responseText));
+            }
+        }
+    </script>
+</body>
+
+</html>
